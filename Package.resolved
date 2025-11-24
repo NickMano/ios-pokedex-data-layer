@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "ios-pokedex-domain-layer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NickMano/ios-pokedex-domain-layer.git",
+      "state" : {
+        "revision" : "0e0d547fa9896b7b7fb8a21c51786d2edb7386fc",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "swift-networking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NickMano/swift-networking.git",
+      "state" : {
+        "revision" : "0adf49f3a6e0916daa5278f2d9170abd6e915578",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

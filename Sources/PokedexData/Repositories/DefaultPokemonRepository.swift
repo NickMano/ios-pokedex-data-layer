@@ -13,9 +13,11 @@ public struct DefaultPokemonRepository: PokemonRepository {
     
     public func fetchPokemons() async throws -> [Pokemon] {
         let manager = PokemonAPI.manager
-        let filters: [Filters] = [.limit(905)]
-        let response = try await manager.sendRequest(route: PokemonAPI.pokemons(filters),
-                                                     decodeTo: PokemonResponse.self)
+        let filters: [Filters] = [.limit(1000)]
+        let response = try await manager.sendRequest(
+            route: PokemonAPI.pokemons(filters),
+            decodeTo: PokemonResponse.self
+        )
         
         let results = try await fetchPokemons(response.pokemons)
         

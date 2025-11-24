@@ -11,9 +11,9 @@ import PokedexDomain
 public struct DefaultPokemonRepository: PokemonRepository {
     public init() {}
     
-    public func fetchPokemons() async throws -> [Pokemon] {
+    public func fetchPokemons(limit limitValue: Int = 100, offset offsetValue: Int = 0) async throws -> [Pokemon] {
         let manager = PokemonAPI.manager
-        let filters: [Filters] = [.limit(1000)]
+        let filters: [Filters] = [.limit(limitValue), .offset(offsetValue)]
         let response = try await manager.sendRequest(
             route: PokemonAPI.pokemons(filters),
             decodeTo: PokemonResponse.self
